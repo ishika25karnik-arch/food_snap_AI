@@ -1,0 +1,135 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.logoIcon {
+  font-size: 1.8rem;
+}
+
+.logoBadge {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.publicNav, .desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.loginBtn {
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.registerBtn {
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px 0 rgba(79, 70, 229, 0.39);
+}
+
+.registerBtn:hover {
+  background: var(--primary-hover);
+  color: white;
+}
+
+.navItem {
+  font-weight: 500;
+  color: var(--text-light);
+  padding: 0.5rem 0;
+  border-bottom: 2px solid transparent;
+}
+
+.navItem:hover {
+  color: var(--primary);
+}
+
+.navItem.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile Nav */
+.bottomNav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--surface);
+  border-top: 1px solid var(--glass-border);
+  z-index: 50;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.bottomNavItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 0;
+  color: var(--text-light);
+  font-size: 0.75rem;
+  font-weight: 500;
+  gap: 0.25rem;
+}
+
+.bottomNavItem.active {
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+  .desktopNav {
+    display: none;
+  }
+  .bottomNav {
+    display: flex;
+  }
+  .main {
+    padding-bottom: 70px; /* Space for bottom nav */
+  }
+}
